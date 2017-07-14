@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+    width: 1060px;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bot: 60px;
+    padding-top: 60px;
+    background: #fff;
+}
+.mainTitleBlock{
+   /*margin-bottom: 40px;*/
+}
+.logo{
+    margin-bottom: 40px;
+}
+.mainMenuBar {
+    background: url('../images/panel.jpg') no-repeat center center;
+    width: 966px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.linkItem{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-decoration:none;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+linkItem:hover{
+
+}
+
+.itemMenuMain{
+    width: 144px;
+    height: 40px;
+}

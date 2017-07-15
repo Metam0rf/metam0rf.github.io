@@ -1,0 +1,23 @@
+div{
+    height:200px;
+    width:300px;
+}
+
+h2{
+    margin-bottom: 0px;
+    padding-right: 20px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+h2+p{
+    background-color: blue;
+    height: 50px;
+}
+
+hr+p{
+    background-color: yellow;
+    height: 40px;
+}

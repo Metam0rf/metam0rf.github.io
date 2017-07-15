@@ -1,6 +1,12 @@
 sub{
-    font-style: italic;
+    color: blue;
 }
 sup{
+    color: red;
+}
+span{
     font-style: italic;
+}
+p.math{
+    font-family: Cambria;
 }

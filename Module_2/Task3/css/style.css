@@ -1,23 +1,25 @@
 div{
-    height:200px;
-    width:300px;
+    height:152px;
+    width:152px;
 }
 
-h2{
-    margin-bottom: 0px;
-    padding-right: 20px;
-    background: red;
-    color: white;
-    font-weight: bold;
-    display: inline-block;
-}
-
-h2+p{
-    background-color: blue;
-    height: 50px;
-}
-
-hr+p{
-    background-color: yellow;
+p.one{
+    background-color: red;
     height: 40px;
+    width: 33.33%;
+    display: block;
+}
+
+p.two{
+    height: 40px;
+    background-color: orange;
+    width: 66.66%;
+    display: block;
+}
+
+p.three{
+    height: 40px;
+    background-color: blue;
+    width: 100%;
+    display: block;
 }

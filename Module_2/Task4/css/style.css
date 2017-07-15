@@ -1,0 +1,25 @@
+div{
+    height:152px;
+    width:152px;
+}
+
+p.one{
+    background-color: red;
+    height: 40px;
+    width: 33.33%;
+    display: block;
+}
+
+p.two{
+    height: 40px;
+    background-color: orange;
+    width: 66.66%;
+    display: block;
+}
+
+p.three{
+    height: 40px;
+    background-color: blue;
+    width: 100%;
+    display: block;
+}

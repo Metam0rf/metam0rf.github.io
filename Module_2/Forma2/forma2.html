@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            height: 400px;
+            width: 600px;
+        }
+        label{
+            font-family: Helvetica;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        /*Почему-то не работают стили(*/
+        input[type="checkbox"]{
+            background: grey;
+            box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+            transition: all .2s;
+        }
+        label[for="weekly"]{
+            margin-right: 200px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<form action="#">
+    <fieldset>
+        <legend>Contacting you</legend>
+        <p>We may contact you from time to time&hellip;</p>
+        <p>
+            <label>How would you like to be contacted?</label>
+            <br>
+            <input type="checkbox" name="byEmail" id="byEmail" value="byEmail"><label for="byEmail">By email</label><br>
+            <input type="checkbox" name="byPost" id="byPost" value="byPost"><label for="byPost">By post</label><br>
+            <input type="checkbox" name="byCarrierPigeon" id="byCarrierPigeon" value="byCarrierPigeon"><label for="byCarrierPigeon">By carrier pigeon</label><br>
+        </p>
+        <p>
+            <label>How often would you like to be contacted?</label>
+            <br>
+            <label for="weekly"><input type="radio" name="frequencyToContact" id="weekly" value="weekly">Weekly</label>
+            <label><input type="radio" name="frequencyToContact" id="daily" value="daily">Daily</label>
+        </p>
+    </fieldset>
+</form>
+</body>
+</html>

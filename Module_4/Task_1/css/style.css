@@ -1,0 +1,76 @@
+
+body,html{
+    height: 550px;
+    width: 400px;
+    font-family: Tahoma, sans-serif;
+}
+
+/*Стиль блока обертки товара*/
+div.wrapItem{
+    margin: 10px;
+    /*padding-top: 10px;*/
+    width: 376px;
+    height: 526px;
+    border: 2px #5a5a5a solid;
+    text-align: center;
+    position: relative;
+}
+
+/*Стиль заголовка товара*/
+div.header{
+    height: 85px;
+}
+
+/*Стили заголовков и текстов кнопок*/
+h1{
+    font-size: 22pt;
+}
+h1.itemPrice{
+    font-size: 31pt;
+    line-height: 67px;
+}
+h2{
+    font-size: 28pt;
+}
+h3{
+    font-size: 22pt;
+}
+a.button{
+    display: inline-block;
+    text-decoration: none;
+}
+
+/*Кнопка "Купить"*/
+a.addToCart{
+    position: absolute;
+    bottom: 5px;
+    right: 87px;
+}
+h2.addToCartText{
+    color: white;
+    text-shadow: -1px 1px 0px rgba(0,0,0,1)
+}
+div.bttnAddToCart{
+    width: 229px;
+    height: 46px;
+    background-color: #ff0000;
+}
+div.bttnAddToCartShadow{
+    width: 228px;
+    height: 3px;
+    background-color: #850000;
+}
+
+/*Кнопка "Рассрочка"*/
+a.creditBttn{
+    width: 229px;
+    height: 31px;
+    display: block;
+    border: 1px solid black;
+    background-color: #8bc144;
+    box-shadow: -4px 4px 0px #9c9c9c, inset 0px 0px 2px rgba(255,255,255,0.65);
+}
+h3.creditText{
+    color: white;
+}
+

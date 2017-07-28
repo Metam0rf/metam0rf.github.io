@@ -1,0 +1,28 @@
+div.body{
+    height: 600px; width: 600px;
+}
+
+/*Шахматка*/
+div.body div{
+    height: 33.333333%; width: 33.333333%;
+    background: #850000;
+    float: left;
+}
+
+div.body div:nth-child(even){
+    background: #fff;
+}
+
+/*Заполняем картинками*/
+div.body div:nth-child(2){
+    background: url("../src/black_bishop-512.png") no-repeat;
+    background-size: contain;
+}
+div.body div:nth-child(4){
+    background: url("../src/white_knight-512.png") no-repeat;
+    background-size: contain;
+}
+div.body div:nth-child(8){
+    background: url("../src/white_rook-512.png") no-repeat;
+    background-size: contain;
+}

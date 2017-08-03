@@ -1,0 +1,42 @@
+.wrapper{
+    height: 750px;
+    width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color: rgb(128,205,198);
+}
+
+.world{
+    height: 100%;
+    width: 100%;
+    background: url("assets/world.svg") no-repeat bottom;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+.water{
+    height: 100%;
+    width: 100%;
+    background: url("assets/water.svg") no-repeat bottom center;
+    position: absolute;
+    bottom: 0px;
+    z-index: 3;
+}
+.clouds{
+    height: 50%;
+    width: 60%;
+    background: url("assets/clouds.svg") no-repeat;
+    position: absolute;
+    top: -2%;
+    left: 40%;
+    z-index: 0;
+}
+.wooden-ship{
+    height: 24%;
+    width: 24%;
+    background: url("assets/wooden-ship.svg") no-repeat;
+    position: absolute;
+    left: 4%;
+    bottom: 9%;
+    z-index: 2;
+}

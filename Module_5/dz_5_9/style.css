@@ -27,7 +27,6 @@
     width: 60%;
     background: url("assets/clouds.svg") no-repeat;
     position: absolute;
-    top: -2%;
     left: 40%;
     z-index: 0;
 }

@@ -1,0 +1,19 @@
+.parent{
+    width: 440px;
+    min-height: 20px;
+    background: #ff6600;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.rows{
+    height: 100px;
+    width: 100px;
+    background: #00f1ff;
+    margin: 5px;
+    float: left;
+}

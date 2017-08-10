@@ -1,0 +1,14 @@
+
+div.figure{
+    background-color: black;
+    width: 35px;
+    height: 20px;
+    margin-left: 500px;
+    position: relative;
+}
+
+div.figure::before{
+    content: '◄';
+    position: absolute;
+    right: 90%;
+}

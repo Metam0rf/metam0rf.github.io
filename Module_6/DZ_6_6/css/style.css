@@ -1,0 +1,14 @@
+
+p:first-letter{
+    font-size: 2em;
+    background-color: red;
+    font-family: Georgia;
+}
+
+p::after{
+    content: '*';
+}
+
+p::before{
+    content: '\2602';
+}

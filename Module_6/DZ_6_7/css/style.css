@@ -1,14 +1,19 @@
 
+
 div.figure{
     background-color: black;
+    display: inline-block;
     width: 35px;
     height: 20px;
-    margin-left: 500px;
-    position: relative;
+    position: absolute;
+    margin: auto;
 }
 
-div.figure::before{
-    content: '◄';
-    position: absolute;
-    right: 90%;
+.figuretriangle {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 10px solid black;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
 }

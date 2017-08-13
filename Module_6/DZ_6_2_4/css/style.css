@@ -1,0 +1,48 @@
+body{
+    font-family: Arial;
+}
+
+tr.item td{
+    border-top: solid lightgrey 2px;
+}
+
+td:first-child{
+    color: red;
+}
+
+td.totalWithDoscount{
+    color: black;
+}
+
+td.totalWithoutDoscount{
+    color: grey;
+    font-size: 11pt;
+}
+
+button{
+    display: inline-block;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: solid;
+    /*text-shadow:*/
+            /*0px -1px 0 #fff,*/
+            /*0px -1px 0 #fff,*/
+            /*0px 1px 0 #fff,*/
+            /*0px 1px 0 #fff;*/
+    border: 0px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: red;
+}
+
+a{
+    margin-top: 20px;
+    display: block;
+    color: red;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+}

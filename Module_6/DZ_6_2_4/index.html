@@ -6,9 +6,9 @@
     <title>DZ_6_2_4</title>
 </head>
 <body>
-    <table align="left" border="0" cellspacing="0" cellpadding="15" width="800px">
+<table class="invoiceTable">
         <thead>
-            <tr align="left">
+            <tr>
                 <th>Название</th>
                 <th>Кол-во</th>
                 <th>Цена</th>
@@ -24,9 +24,9 @@
                 <td>300р.</td>
                 <td>50%</td>
                 <td>
-                    <button>+</button>
-                    <button>&nbsp;-&nbsp;</button>
-                    <button>УДАЛИТЬ</button>
+                    <button class="controlBttn">+</button>
+                    <button class="controlBttn">&nbsp;-&nbsp;</button>
+                    <button class="controlBttn">УДАЛИТЬ</button>
                 </td>
                 <td>300р.</td>
             </tr>
@@ -35,9 +35,9 @@
                 <td>1 шт.</td>
                 <td>100р.</td>
                 <td>&mdash;</td>
-                <td><button>+</button>
-                    <button>&nbsp;-&nbsp;</button>
-                    <button>УДАЛИТЬ</button></td>
+                <td><button class="controlBttn">+</button>
+                    <button class="controlBttn">&nbsp;-&nbsp;</button>
+                    <button class="controlBttn">УДАЛИТЬ</button></td>
                 <td>3100р.</td>
             </tr>
             <tr class="item">
@@ -45,9 +45,9 @@
                 <td>1 шт.</td>
                 <td>10 000р.</td>
                 <td>&mdash;</td>
-                <td><button>+</button>
-                    <button>&nbsp;-&nbsp;</button>
-                    <button>УДАЛИТЬ</button></td>
+                <td><button class="controlBttn">+</button>
+                    <button class="controlBttn">&nbsp;-&nbsp;</button>
+                    <button class="controlBttn">УДАЛИТЬ</button></td>
                 <td>10 000р.</td>
             </tr>
             <tr class="item">
@@ -55,26 +55,27 @@
                 <td>1 шт.</td>
                 <td>300р.</td>
                 <td>&mdash;</td>
-                <td><button>+</button>
-                    <button>&nbsp;-&nbsp;</button>
-                    <button>УДАЛИТЬ</button></td>
+                <td><button class="controlBttn">+</button>
+                    <button class="controlBttn">&nbsp;-&nbsp;</button>
+                    <button class="controlBttn">УДАЛИТЬ</button></td>
                 <td>300р.</td>
             </tr>
             <tr>
                 <td colspan="6">
-                    <table class="totalTable" width="100%" border="0" align="right">
+                    <table class="totalTable">
                     <tbody>
                     <tr>
-                        <td class="totalWithDoscount" align="right">4 шт. на сумму: <strong>10 700р.</strong></td>
+                        <td class="totalWithDoscount">4 шт. на сумму: <strong>10 700р.</strong></td>
                     </tr>
                     <tr>
-                        <td class="totalWithoutDoscount" align="right">Сумма без скидки: 11 000р. &mdash;</td>
+                        <td class="totalWithoutDoscount">Сумма без скидки: 11 000р. &mdash;</td>
                     </tr>
                     <tr>
-                        <td class="totalWithoutDoscount" align="center" ><a href="#"><i><strong>перейти в корзину &rarr;</strong></i></a></td>
+                        <td><a href="#"><i><strong>перейти в корзину &rarr;</strong></i></a></td>
                     </tr>
                     </tbody>
                 </table>
+                    <button class="closeBttn">&#10006;</button>
                 </td>
             </tr>
         </tbody>

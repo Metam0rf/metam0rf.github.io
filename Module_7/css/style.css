@@ -11,7 +11,7 @@ body  {
     text-align: left;
 	
 }
-.lgp #wrapper { 
+.lgp .wrapper {
 	width: 960px;
     border-radius: 5px 5px 5px 5px;
 	box-shadow: 0 0 10px;
@@ -107,7 +107,7 @@ text-decoration:underline;
     font-size: 1px;
     line-height: 0px;
 }
-.lgp #wrapper header img {
+.lgp .wrapper header img {
 	margin: 10px;
 }
 .logo {
@@ -133,6 +133,7 @@ float:left;
 h1 {
 	line-height:150%;
 }
+
 .bordered {
 	margin:15px;
 	border-radius:10px;

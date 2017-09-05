@@ -1,0 +1,9 @@
+
+div.container{
+    margin-top: 10px;
+}
+
+div.content, header{
+
+    background-color: darkslateblue;
+}

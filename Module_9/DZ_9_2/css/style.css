@@ -1,0 +1,15 @@
+div.container{
+    margin-top: 10px;
+}
+div.itemWrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.itemWrapper>div{
+    width: calc((100% - 20px) / 7);
+    text-transform: lowercase;
+}
+
+a.link{
+    margin-left: 7%;
+}

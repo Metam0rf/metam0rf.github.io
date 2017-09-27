@@ -1,0 +1,177 @@
+@font-face {
+    font-family: MyriadPro; /* Гарнитура шрифта */
+    src: url(../fonts/MyriadPro-Regular.otf); /* Путь к файлу со шрифтом */
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 10px;
+}
+
+.frame{
+    width: 767px;
+    margin: 0px auto;
+    padding: 0 4px 0 4px;
+    border: 1px solid #BEBEBE;
+    background-color: #FFFFFF;
+}
+
+/*-------Row #1-------------*/
+header{
+    height: 76px;
+}
+
+.logo{
+    background: url("../img/main.jpg") no-repeat;
+    height: inherit;
+    float: left;
+    width: 244px;
+}
+
+.headerContentWrapper{
+    width: 523px;
+    padding-top: 21px;
+    background: url("../img/hader_background.jpg") no-repeat;
+    height: inherit;
+    float: right;
+    line-height: 14px;
+    box-sizing: border-box;
+}
+
+.bucket{
+    width: 179px;
+    padding-right: 19px;
+    float: left;
+    text-align: right;
+}
+
+.languagePicker{
+    width: 129px;
+    padding-left: 17px;
+    float: left;
+}
+
+.languagePicker>a{
+    margin-right: 11px;
+}
+
+.currencyPicker{
+    width: 159px;
+    padding-left: 20px;
+    float: right;
+}
+
+/*-------Row #1-------------*/
+
+/*-------Row #2-------------*/
+
+.row-2{
+    height: 160px;
+    width: inherit;
+}
+
+nav{
+    width: 244px;
+    padding-top: 23px;
+    padding-left: 40px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.promo{
+    height: inherit;
+    width: 523px;
+    float: right;
+    position: relative;
+}
+
+.background{
+    width: inherit;
+    height: inherit;
+}
+
+.positionAbs{
+    position: absolute;
+    left: -25px;
+    top: -25px;
+}
+
+nav ul{
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    /*height: 22px;*/
+    border-bottom: 1px dotted #eaeaea;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+nav img{
+    margin-right: 15px;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: MyriadPro, sans-serif;
+    font-size: 13px;
+    color:  #000;
+    display: inline-block;
+}
+
+nav a:hover{
+    color:  red;
+}
+
+/*-------Row #2-------------*/
+
+/*-------Row #3-------------*/
+.catalog{
+
+}
+
+/*-------Row #3-------------*/
+
+.clearFix:after{
+    content: "";
+    visibility: hidden;
+    clear: both;
+}
+.text1 {
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+.text2 {
+    font-size: 10px;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+.text3 {
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+}
+.text4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #de0303;
+}
+.text5 {
+    font-size: 10px;
+    font-weight: normal;
+    color: #67767a;
+}
+.text6 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.text7 {
+    font-size: 10px;
+    font-weight: normal;
+    color: #000000;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>DZ_11</title>
+</head>
+<body>
+    <div class="frame">
+        <!--Header-->
+        <div class="row-1 clearFix">
+            <header>
+                <div class="logo"></div>
+                <div class="headerContentWrapper clearFix">
+                    <div class="bucket">
+                        <span class="text2">Shopping Cart:</span>
+                        <br>
+                        <span class="text1">0 items</span>
+                    </div>
+                    <div class="languagePicker">
+                        <span class="text2">Choose your language:</span>
+                        <a href="#"
+                           onmouseover="window.status='english';  return true;"
+                           onmouseout="window.status='';  return true;">
+                            <img src="img/english.jpg" width="26" height="19" border="0" alt="english">
+                        </a>
+                        <a href="#"
+                           onmouseover="window.status='german';  return true;"
+                           onmouseout="window.status='';  return true;">
+                            <img src="img/german.jpg" width="26" height="19" border="0" alt="german">
+                        </a>
+                        <a href="#"
+                           onmouseover="window.status='spanish';  return true;"
+                           onmouseout="window.status='';  return true;">
+                            <img src="img/spanish.jpg" width="26" height="19" border="0" alt="spanish">
+                        </a>
+                    </div>
+                    <div class="currencyPicker">
+                        <span class="text2">Currencies</span>
+                        <select name="select" class="text7" style="width:140px">
+                        <option>US Dollar</option>
+                        <option>Euro</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!--Header-->
+
+        <!--Nav + Main-->
+        <div class="row-2 clearFix">
+            <nav>
+                <ul>
+                    <li><a href=""><img src="img/bullet.png" alt="Home Page">Home Page</a></li>
+                    <li><a href=""><img src="img/bullet.png" alt="New Products">New Products</a></li>
+                    <li><a href=""><img src="img/bullet.png" alt="Specials">Specials</a></li>
+                    <li><a href=""><img src="img/bullet.png" alt="My Account">My Account</a></li>
+                    <li><a href=""><img src="img/bullet.png" alt="Contact us">Contact us</a></li>
+                </ul>
+            </nav>
+
+            <div class="promo">
+                <map name="promo_href">
+                    <area href="#" shape="rect" coords="180,100,470,140" />
+                </map>
+                <img class="background" src="img/promo_back.jpg" usemap="#promo_href" />
+                <a href="#">
+                    <img class="positionAbs" src="img/PromoCamera.png" alt="Promo">
+                </a>
+            </div>
+        </div>
+        <!--Nav + Main-->
+        <div class="row-3 clearFix">
+            <nav class="catalog">
+
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

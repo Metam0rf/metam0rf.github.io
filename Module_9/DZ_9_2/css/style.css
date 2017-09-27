@@ -13,3 +13,14 @@ div.itemWrapper{
 a.link{
     margin-left: 7%;
 }
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.flexItem{
+    flex: auto;
+}
+
+

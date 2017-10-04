@@ -7,6 +7,12 @@ body {
     font-family: Tahoma, sans-serif;
     font-size: 10px;
 }
+h2{
+    background: #cbcbcb;
+    line-height: 27px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
 
 .frame{
     width: 767px;
@@ -14,6 +20,23 @@ body {
     padding: 0 4px 0 4px;
     border: 1px solid #BEBEBE;
     background-color: #FFFFFF;
+}
+
+nav{
+    width: 244px;
+    float: left;
+    box-sizing: border-box;
+}
+nav li{
+    /*height: 22px;*/
+    border-bottom: 1px dotted #eaeaea;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: MyriadPro, sans-serif;
+    color:  #000;
+    display: inline-block;
 }
 
 /*-------Row #1-------------*/
@@ -70,12 +93,9 @@ header{
     width: inherit;
 }
 
-nav{
-    width: 244px;
+.mainNav{
     padding-top: 23px;
     padding-left: 40px;
-    float: left;
-    box-sizing: border-box;
 }
 
 .promo{
@@ -103,9 +123,7 @@ nav ul{
     list-style: none;
 }
 
-nav li{
-    /*height: 22px;*/
-    border-bottom: 1px dotted #eaeaea;
+.mainNav li{
     padding-top: 4px;
     padding-bottom: 4px;
 }
@@ -114,12 +132,8 @@ nav img{
     margin-right: 15px;
 }
 
-nav a{
-    text-decoration: none;
-    font-family: MyriadPro, sans-serif;
+.mainNav a{
     font-size: 13px;
-    color:  #000;
-    display: inline-block;
 }
 
 nav a:hover{
@@ -130,7 +144,16 @@ nav a:hover{
 
 /*-------Row #3-------------*/
 .catalog{
+    padding-left: 32px;
+}
 
+.catalogNavHeader{
+    padding-left: 13px;
+}
+
+.catalogNavHeader a{
+    font-size: 11px;
+    font-weight: normal;
 }
 
 /*-------Row #3-------------*/

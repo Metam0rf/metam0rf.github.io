@@ -1,4 +1,5 @@
 "use strict";
+
 //--------ЗАДАНИЕ 1
 var today = new Date();
 

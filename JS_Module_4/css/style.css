@@ -22,3 +22,10 @@ h3 {
 .displayBlock{
     display: block;
 }
+
+img{
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

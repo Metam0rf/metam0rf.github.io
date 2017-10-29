@@ -1,11 +1,13 @@
-"use strict"
+"use strict";
+var isShadowSet = false;
 
 //---------Task 1
 var setTextColorBttn = document.getElementById("setRedText");
 setTextColorBttn.addEventListener("click", setColorToElements);
 
 function setColorToElements(){
-    var elements, color = "red";
+    var elements;
+    var color = "red";
     elements = document.querySelectorAll("p");
     elements.forEach(function (item) {
         item.style.color = color;
@@ -16,11 +18,24 @@ function setColorToElements(){
 var setImgShadowBttn = document.getElementById("setImgShadow");
 setImgShadowBttn.addEventListener("click", setShadowToElements);
 
-function setShadowToElements(color){
-    var styleShadow = "box-shadow: 3,3, black";
-    var elements, color = "red";
-    elements = document.querySelectorAll("p");
+function setShadowToElements(){
+    var elements, color = "black";
+    var styleShadow = !isShadowSet ? "0 0 10px " + color : ""
+    elements = document.querySelectorAll("img");
     elements.forEach(function (item) {
-        item.style.color = color;
-    });
-};
+        item.style.boxShadow = styleShadow;
+    })
+    isShadowSet = !isShadowSet};
+
+//---------Task 3
+var setImgShadowBttn = document.getElementById("setImgShadow");
+setImgShadowBttn.addEventListener("click", setShadowToElements);
+
+function setShadowToElements(){
+    var elements, color = "black";
+    var styleShadow = !isShadowSet ? "0 0 10px " + color : ""
+    elements = document.querySelectorAll("img");
+    elements.forEach(function (item) {
+        item.style.boxShadow = styleShadow;
+    })
+    isShadowSet = !isShadowSet};

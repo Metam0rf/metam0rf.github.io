@@ -1,6 +1,6 @@
 "use strict";
 
-var array = [1,2,3,"q","w","qw"];
+var array = [1, 2, 3, "q", "w", "qw"];
 
 var displayTextElement = document.querySelector("#new");
 var indexInput = document.querySelector("#index");
@@ -36,15 +36,3 @@ function arrayHandler(e){
 
     array[operationName].apply(array,argArray);
 }
-
-// function push(){
-//     array
-// }
-//
-// function shift(){
-//     array
-// }
-//
-// function unshift(){
-//     array
-// }

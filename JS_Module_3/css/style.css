@@ -22,3 +22,9 @@ h3 {
 .displayBlock{
     display: block;
 }
+
+button{
+    color:black;
+    background-color: #9c9c9c;
+
+}

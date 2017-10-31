@@ -1,6 +1,10 @@
 "use strict";
 
 var clickCounter = 0;
+var randomNumber = Math.round(Math.random()*10);
+var tryCounter = 3;
+var tryCounterElement = document.querySelector("#tryCounter");
+var userRandomNumberInput = document.querySelector("#userRandomNumber");
 
 (function () {
     var setTextColorBttn = document.getElementById("setRedText");
@@ -28,6 +32,13 @@ var clickCounter = 0;
 
     var displayArrayLengthBttn = document.querySelector("#displayArrayLengthBttn");
     displayArrayLengthBttn.addEventListener("click", clickArrayLengthBttnHandler);
+
+    var checkNumberBttn = document.querySelector("#checkNumberBttn");
+    checkNumberBttn.addEventListener("click", checkNumberHandler);
+
+    var quessNumberBttn = document.querySelector("#quessNumberBttn");
+    quessNumberBttn.addEventListener("click", quessNumberHandler);
+
 })();
 
 //---------Task 1
@@ -74,11 +85,11 @@ function powEvent() {
     var powNumberElement = document.querySelector("#powNumber");
     var number = parseInt(numberElement.value);
     var powNumber = parseInt(powNumberElement.value);
-    pow(number, powNumber);
+    alert(pow(number, powNumber));
 }
 
 function pow(number, pow) {
-    alert(Math.pow(number, pow));
+    return Math.pow(number, pow);
 }
 
 //---------Task 6
@@ -121,9 +132,9 @@ function checkAge(age) {
 //---------Task 9
 function clickArrayLengthBttnHandler() {
     var arrayInput = document.querySelector("#arrayInput");
-    array = arrayInput.value.split(",");
-    alert(arrayInput.value);
-    var arrayLength = getArrayLength();
+    var textFromInput = arrayInput.value;
+    var array = textFromInput.split(",");
+    var arrayLength = getArrayLength(array);
     alert(arrayLength);
 }
 
@@ -135,4 +146,47 @@ function getArrayLength(array) {
     }
 
     return array.length;
+}
+
+//---------Task 10
+function checkNumberHandler() {
+
+    var numberInputElement = document.querySelector("#numberInput");
+    var numberToCheck = parseInt(numberInputElement.value);
+    alert(checkNumber(numberToCheck));
+}
+
+function checkNumber(number) {
+
+    if(number > 10){
+        return "" + pow(number, 2);
+    } else if(number < 7){
+        return "Число меньше 7";
+    } else return "" + number;
+
+
+}
+
+//---------Task 11
+function quessNumberHandler() {
+
+    if(tryCounter == 0){
+        alert("Все попытки исчерпано!");
+        return;
+    }
+
+    var userNumber = parseInt(userRandomNumberInput.value);
+
+    if(randomNumber > userNumber){
+        alert("Угадываемое число больше");
+    } else if(randomNumber < userNumber){
+        alert("Угадываемое число меньше");
+    } else {
+        tryCounterElement.textContent = "Число разгадано!";
+        alert("Вы угадали число!");
+        return;
+    }
+
+    tryCounter -= 1;
+    tryCounterElement.textContent = "Осталось попыток: " + tryCounter;
 }

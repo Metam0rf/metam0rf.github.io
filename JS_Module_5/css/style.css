@@ -1,0 +1,25 @@
+
+body,html{
+    width: 1000px;
+    margin: 10px auto;
+    color: #fff;
+}
+
+div.task{
+    margin: 5px auto;
+    width: inherit;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    background: #5a5a5a;
+    border:1px black solid;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif,Monospaced;
+    /*padding: 2px;*/
+    color: goldenrod;
+}
+
+.displayBlock{
+    display: block;
+}

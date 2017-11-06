@@ -71,12 +71,9 @@ CustomValidation.prototype = {
 
         const validity = input.validity;
 
-        // удалим пробелы в конце и начале инпутов
-        input.value = input.value.trim();
-
-        if (validity.valueMissing) {
-            this.addInvalidity('Відсутній обов\'язковий символ');
-        }
+        // if (!validity.valueMissing) {
+        //     this.addInvalidity('Відсутній обов\'язковий символ');
+        // }
 
         if (validity.tooShort) {
             let minLength = input.getAttribute('minlength');
@@ -129,8 +126,10 @@ form.addEventListener("submit", function (event) {
 });
 
 for(let i=0; i < form.elements.length; i++){
-    if(form.elements[i].tagName = "input"){
-        form.elements[i].addEventListener("change", CustomValidation);
+    if(form.elements[i].tagName === "input" || form.elements[i].type !== "submit"){
+        form.elements[i].addEventListener("blur", function (e) {
+            validate(e.currentTarget);
+        });
     }
 }
 
@@ -138,9 +137,13 @@ function validate(input) {
 
     let isCorrect = true;
 
+    // удалим пробелы в конце и начале инпутов
+    input.value = input.value.trim();
+
+
     // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-    if (input.checkValidity() == false) {
-        let inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+    if (input.checkValidity() === false) {
+        let inputCustomValidation =  new CustomValidation(); // Создадим объект CustomValidation
         inputCustomValidation.checkValidity(input); // Выявим ошибки
         let customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
         input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке

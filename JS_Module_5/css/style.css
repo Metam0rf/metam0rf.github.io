@@ -24,6 +24,16 @@ h3 {
     display: block;
 }
 
+.inline-block{
+    display: inline-block;
+}
+
+.clearfix::after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
 img{
     margin: 10px;
     display: inline-block;
@@ -42,3 +52,19 @@ input:valid {
 input:required:valid {
     border-color: green;
 }
+
+.field{
+    clear: both;
+    text-align: right;
+    line-height: 25px;
+}
+
+label {
+    float: left;
+    padding-right:10px;
+}
+
+.main{
+    float: left;
+}
+

@@ -60,18 +60,99 @@ urlTextTask4Input.addEventListener("change", function () {
 
 //---------Task 5
 
-// let validity = {
-//     valid: false // Поле валидно
-//     customError: false // Установленно специальное сообщение ошибки
-//     patternMismatch: false // Значение не удовлетворяет шаблону, установленному в атрибуте pattern
-//     rangeOverflow: false // Значение превосходит атрибут max
-//     rangeUnderflow: true // Значение меньше атрибута min
-//     stepMismatch: true // Значение не соответствует указаному шагу
-//     tooLong: false // Значение слишком длинное
-//     tooShort: false // Значение слишком короткое
-//     typeMismatch: false // Значение не соответствует указаному атрибуту type
-//     valueMissing: false // Отсутствует обязательное значение
-// };
+function CustomValidation() { }
+
+CustomValidation.prototype = {
+    // Установим пустой массив сообщений об ошибках
+    invalidities: [],
+
+    // Метод, проверяющий валидность
+    checkValidity: function(input) {
+
+        const validity = input.validity;
+
+        // удалим пробелы в конце и начале инпутов
+        input.value = input.value.trim();
+
+        if (validity.valueMissing) {
+            this.addInvalidity('Відсутній обов\'язковий символ');
+        }
+
+        if (validity.tooShort) {
+            let minLength = input.getAttribute('minlength');
+            this.addInvalidity('Поле має містити не менше ' + minLength + ' символів');
+        }
+
+        // И остальные проверки валидности...
+
+        // А тут специальные
+        if (input.getAttribute('name') === "email") {
+            if (~input.value.indexOf(" ")) {
+                this.addInvalidity('email не повинен мати пробілів');
+            }
+            if(input.value.split("@", 3).length > 2){
+                this.addInvalidity('email має містити один символ "@"');
+            }
+        }
+    },
+
+    // Добавляем сообщение об ошибке в массив ошибок
+    addInvalidity: function(message) {
+        this.invalidities.push(message);
+    },
+
+    // Получаем общий текст сообщений об ошибках
+    getInvalidities: function() {
+        return this.invalidities.join('. \n');
+    }
+};
+
+CustomValidation.prototype.getInvaliditiesForHTML = function() {
+    return this.invalidities.join('. <br>');
+};
+
+const form = document.forms[0];
+form.addEventListener("submit", function (event) {
+
+    let stopSubmit = false;
+
+    for(let i=0; i < event.currentTarget.elements.length; i++){
+        if(form.elements[i].tagName = "input"){
+            stopSubmit = validate(form.elements[i]);
+        }
+    }
+
+    if (stopSubmit) {
+        event.preventDefault();
+    }
+
+});
+
+for(let i=0; i < form.elements.length; i++){
+    if(form.elements[i].tagName = "input"){
+        form.elements[i].addEventListener("change", CustomValidation);
+    }
+}
+
+function validate(input) {
+
+    let isCorrect = true;
+
+    // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
+    if (input.checkValidity() == false) {
+        let inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+        inputCustomValidation.checkValidity(input); // Выявим ошибки
+        let customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
+        input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
+        // Добавим ошибки в документ
+        // var customValidityMessageForHTML = inputCustomValidation.getInvaliditiesForHTML();
+        // input.insertAdjacentHTML('afterend', '<p class="error-message">' + customValidityMessageForHTML + '</p>')
+        isCorrect = false;
+    }
+
+    return isCorrect;
+}
+
 
 //---------Task 6
 const symbolInput = document.querySelector("#symbolInput");
@@ -83,6 +164,5 @@ symbolInput.addEventListener("change", function () {
         return;
     }
 
-    let firstCharCode = text.charCodeAt(0);
-    displaySymbolCodeText.textContent = firstCharCode;
+    displaySymbolCodeText.textContent =  text.charCodeAt(0);
 });

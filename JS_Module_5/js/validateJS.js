@@ -26,19 +26,24 @@ CustomValidation.prototype = {
             this.addInvalidity('This is the wrong pattern for this field');
         }
 
-        if (validity.rangeOverflow) {
-            var max = getAttributeValue(input, 'max');
-            this.addInvalidity('The maximum value should be ' + max);
-        }
+        // if (validity.rangeOverflow) {
+        //     var max = getAttributeValue(input, 'max');
+        //     this.addInvalidity('The maximum value should be ' + max);
+        // }
+        //
+        // if (validity.rangeUnderflow) {
+        //     var min = getAttributeValue(input, 'min');
+        //     this.addInvalidity('The minimum value should be ' + min);
+        // }
+        //
+        // if (validity.stepMismatch) {
+        //     var step = getAttributeValue(input, 'step');
+        //     this.addInvalidity('This number needs to be a multiple of ' + step);
+        // }
 
-        if (validity.rangeUnderflow) {
-            var min = getAttributeValue(input, 'min');
-            this.addInvalidity('The minimum value should be ' + min);
-        }
-
-        if (validity.stepMismatch) {
-            var step = getAttributeValue(input, 'step');
-            this.addInvalidity('This number needs to be a multiple of ' + step);
+        if (validity.tooShort) {
+            var minLength = getAttributeValue(input, 'minlength');
+            this.addInvalidity('Поле має містити не менше ' + minLength + ' символів');
         }
 
         // И остальные проверки валидности...

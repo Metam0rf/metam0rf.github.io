@@ -60,7 +60,7 @@ urlTextTask4Input.addEventListener("change", function () {
 
 //---------Task 5
 
-function CustomValidation() { }
+function CustomValidation() { this.invalidities = []; }
 
 CustomValidation.prototype = {
     // Установим пустой массив сообщений об ошибках
@@ -69,7 +69,7 @@ CustomValidation.prototype = {
     // Метод, проверяющий валидность
     checkValidity: function(input) {
 
-        const validity = input.validity;
+        let validity = input.validity;
 
         // if (!validity.valueMissing) {
         //     this.addInvalidity('Відсутній обов\'язковий символ');
@@ -87,8 +87,12 @@ CustomValidation.prototype = {
             if (~input.value.indexOf(" ")) {
                 this.addInvalidity('email не повинен мати пробілів');
             }
-            if(input.value.split("@", 3).length > 2){
+            if(input.value.split("@", 3).length !== 2){
                 this.addInvalidity('email має містити один символ "@"');
+            }
+        } else if (input.getAttribute('name') === "password") {
+            if (input.value.length < 5) {
+                this.addInvalidity('Пароль має містити не менше 5 символів');
             }
         }
     },
@@ -101,11 +105,11 @@ CustomValidation.prototype = {
     // Получаем общий текст сообщений об ошибках
     getInvalidities: function() {
         return this.invalidities.join('. \n');
-    }
-};
+    },
 
-CustomValidation.prototype.getInvaliditiesForHTML = function() {
-    return this.invalidities.join('. <br>');
+    isCorrect: function() {
+        return this.invalidities.length === 0;
+    }
 };
 
 const form = document.forms[0];
@@ -114,7 +118,7 @@ form.addEventListener("submit", function (event) {
     let stopSubmit = false;
 
     for(let i=0; i < event.currentTarget.elements.length; i++){
-        if(form.elements[i].tagName = "input"){
+        if(form.elements[i].tagName === "input"){
             stopSubmit = validate(form.elements[i]);
         }
     }
@@ -127,33 +131,28 @@ form.addEventListener("submit", function (event) {
 
 for(let i=0; i < form.elements.length; i++){
     if(form.elements[i].tagName === "input" || form.elements[i].type !== "submit"){
-        form.elements[i].addEventListener("blur", function (e) {
-            validate(e.currentTarget);
-        });
+        form.elements[i].addEventListener("blur", onBlurEventHandler);
     }
+}
+
+function onBlurEventHandler(e) {
+    validate(e.currentTarget);
 }
 
 function validate(input) {
 
-    let isCorrect = true;
+    // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
+    let isCorrect = input.checkValidity();
 
     // удалим пробелы в конце и начале инпутов
     input.value = input.value.trim();
 
+    let inputCustomValidation =  new CustomValidation(); // Создадим объект CustomValidation
+    inputCustomValidation.checkValidity(input); // Выявим ошибки
+    let customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
+    input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
 
-    // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-    if (input.checkValidity() === false) {
-        let inputCustomValidation =  new CustomValidation(); // Создадим объект CustomValidation
-        inputCustomValidation.checkValidity(input); // Выявим ошибки
-        let customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
-        input.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-        // Добавим ошибки в документ
-        // var customValidityMessageForHTML = inputCustomValidation.getInvaliditiesForHTML();
-        // input.insertAdjacentHTML('afterend', '<p class="error-message">' + customValidityMessageForHTML + '</p>')
-        isCorrect = false;
-    }
-
-    return isCorrect;
+    return isCorrect && customValidityMessage.isCorrect();
 }
 
 

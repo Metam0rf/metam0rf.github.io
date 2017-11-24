@@ -1,0 +1,74 @@
+
+body,html{
+    width: 1000px;
+    margin: 10px auto;
+    color: #fff;
+}
+
+div.task{
+    margin: 5px auto;
+    width: inherit;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    background: #5a5a5a;
+    border:1px black solid;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif,Monospaced;
+    /*padding: 2px;*/
+    color: goldenrod;
+}
+
+.displayBlock{
+    display: block;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.clearfix::after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.main{
+    float: left;
+}
+
+.mouseMovementTracker{
+    height: 150px;
+    width: inherit;
+    background: #FFF;
+}
+
+
+.folderImage[data-folder-status="closed"] {
+    height: 100px;
+    width: 100px;
+    background: no-repeat url("../assets/Closedfolder.png");
+    background-size: cover;
+
+}
+
+.folderImage[data-folder-status="opened"] {
+    height: 100px;
+    width: 100px;
+    background: no-repeat  url("../assets/OpenedFolder.png");
+    background-size: cover;
+}
+
+div.square{
+    height: 30px;
+    width: 30px;
+    margin: 0px 5px 5px 0px;
+    float: left;
+    background-color: #00f1ff;
+}
+
+div.square.rounded{
+    border-radius: 50%;
+    transition-duration: 1000ms;
+}

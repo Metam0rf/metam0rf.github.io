@@ -63,7 +63,7 @@ h3 {
 div.square{
     height: 30px;
     width: 30px;
-    margin: 0px 5px 5px 0px;
+    margin: 0 5px 5px 0;
     float: left;
     background-color: #00f1ff;
 }
@@ -71,4 +71,40 @@ div.square{
 div.square.rounded{
     border-radius: 50%;
     transition-duration: 1000ms;
+}
+
+div.gallery{
+    height: 250px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.gallery--img{
+    height: 150px;
+    width: 180px;
+}
+
+#squareToMove{
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+    background-color: #00f1ff;
+}
+
+.toggleBackground{
+    height: 100px;
+    width: 350px;
+    padding: 5px;
+    border: solid #000 1px;
+    background-color: #00698c;
+    border-radius: 20px;
+    box-shadow: inset 3px 0 10px rgba(255,255,255,1) ;
+}
+.toggleButton{
+    border-radius: 50%;
+    background-color: coral;
+    border: solid #000000 2px;
+    width: 100px;
+    height: 100%;
+    transition-duration: 0.5s
 }

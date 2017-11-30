@@ -1,0 +1,59 @@
+
+body,html{
+    width: 1000px;
+    margin: 10px auto;
+    color: #fff;
+}
+
+div.task{
+    margin: 5px auto;
+    width: inherit;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    background: #5a5a5a;
+    border:1px black solid;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif,Monospaced;
+    /*padding: 2px;*/
+    color: goldenrod;
+}
+
+.displayBlock{
+    display: block;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.clearfix::after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+#addItem{
+    margin-bottom: 5px;
+}
+
+#totalText{
+    display: block;
+}
+
+div.input-group{
+    margin-bottom: 5px;
+}
+
+div.input-group>input.isEmpty{
+    outline: solid red 2px;
+}
+
+.randomList{
+    display: inline-block;
+}
+
+.randomList>li.highlighted{
+    background-color: rgba(255,0, 0, 0.5);
+}

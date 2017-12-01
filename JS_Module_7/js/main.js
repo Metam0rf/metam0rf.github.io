@@ -5,19 +5,20 @@
 const groupHTML = `<div class="input-group"><input type="text">
                         <button>-</button>
                     </div>`;
+
+const groupContainerElement = document.querySelector(".groupContainer");
 const panelElement = document.querySelector(".panel");
-const totalTextElement = panelElement.querySelector("textarea");
 const addNewGroupButton = document.querySelector("#addItem");
 
 const removeGroup = (event) => {
-    let removeNode = event.target.parentNode;
-    removeNode.parentNode.removeChild(removeNode);
+    if(event.target.nodeName === "BUTTON"){
+        event.stopPropagation();
+        groupContainerElement.removeChild(event.target.parentNode);
+    }
 };
+groupContainerElement.addEventListener("click", removeGroup);
 const addNewGroup = () => {
-    totalTextElement.insertAdjacentHTML("beforeBegin", groupHTML);
-    const addedGroup = totalTextElement.previousElementSibling;
-    const removeBttn = addedGroup.querySelector("button");
-    removeBttn.addEventListener("click", removeGroup);
+    groupContainerElement.insertAdjacentHTML("beforeEnd", groupHTML);
 };
 addNewGroupButton.addEventListener("click", addNewGroup);
 
@@ -26,25 +27,27 @@ const totalTextarea = panelElement.querySelector("#totalText");
 const combineButton = panelElement.querySelector(".combineButton");
 
 const combine = () => {
-    const inputsElements = panelElement.querySelectorAll("input[type='text']");
-    let inputsArray = Array.from(inputsElements);
 
+    const combineOption = getCombineOption();
+
+    let inputsArray = Array.from(
+        panelElement.querySelectorAll("input[type='text']")
+    );
     //STEP 4
     const isOkay = validateInputs(inputsArray);
     if(!isOkay){
         alert("Не все поля ввода заполнены !");
         return;
     }
-    //--STEP 4
 
+    //--STEP 4
     const valuesArray = inputsArray.map((item) => item.value.trim())
         .filter((value) => value !== "");
-    let combinedText = "";
 
+    let combinedText = "";
     valuesArray.forEach((item, index) => {
 
         //STEP 3
-        const combineOption = getCombineOption();
         switch (combineOption){
             case "1": //Четные
                 if(index%2 === 0) return;
@@ -62,9 +65,10 @@ const combine = () => {
 combineButton.addEventListener("click", combine);
 
 //--STEP 3
+const radioGrp = panelElement.querySelectorAll("input[name='combineOption']");
 const getCombineOption = () => {
-    const radioGrp = panelElement.querySelectorAll("input[name='combineOption']");
-    return  Array.from(radioGrp).find((radio) => radio.checked === true).value;
+
+    return  Array.from(radioGrp).find((radio) => radio.checked).value;
 };
 
 //--STEP 4

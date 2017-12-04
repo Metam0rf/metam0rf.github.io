@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Films API</title>
+</head>
+<body>
+<div class="wrapPage">
+    <form id="movieFilter">
+        <div class="btnWrapper">
+            <input type="text" id="searchText" placeholder="SEARCH FILMS BY NAME">
+            <button class="btn" id="search" type="submit">поиск</button>
+        </div>
+        <div class="btnWrapper" id="requestCategory">
+            <button class="btn" id="popular" type="button">Popular</button>
+            <button class="btn" id="top_rated" type="button">TOP rates</button>
+            <button class="btn" id="upcoming" type="button">Upcoming</button>
+        </div>
+    </form>
+    <main>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+<!-- Шаблон карточки фильма -->
+<script type="text/movieCard" id="movie-card">
+    <section class="movieCard" id="<%- id%>">
+        <img class="poster" src="<%- posterPath%>" alt="">
+        <h3><%- title%> </h3>
+        <p><%- overview%></p>
+        <footer class="cardFooter">Дата релиза: <%- releaseDate%></footer>
+        <span class="cardRate"><%- voteRating%></span>
+    </section>
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

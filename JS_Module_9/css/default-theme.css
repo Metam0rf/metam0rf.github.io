@@ -18,18 +18,6 @@ main{
     background-color: #40c4ff;
 }
 
-.btn:hover > input{
-    background-color: #40c4ff;
-}
-
 .movieCard{
-    background-color: #40c4ff;
-}
-
-input[type="color"]{
-    background-color: #01579b;
-}
-
-input[type="color"]:hover{
     background-color: #40c4ff;
 }

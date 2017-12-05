@@ -83,25 +83,28 @@ categoryContainer.addEventListener("click", (e) => {
 //----Task 9
 const THEME_KEY = "theme";
 const themeStyleElement = document.querySelector("#themeCSS");
-const defaultStylePath = themeStyleElement.getAttribute("href");
+let currentStylePath = themeStyleElement.getAttribute("href");
 
 const setTheme = (themePath) =>{
     themeStyleElement.setAttribute("href", themePath);
+    currentStylePath = themePath;
 };
 
 const settingsContainer = movieFilterForm.querySelector(".style-settings");
 settingsContainer.addEventListener("click", (event) => {
+    let themePathBtn = event.target;
+    if (event.target.tagName === "IMG") {
+        themePathBtn = event.target.parentNode;
+    }
+    const themePath = themePathBtn.getAttribute("data-themePath") || currentStylePath;
 
-    if (event.target.tagName === "INPUT") {
-       event.preventDefault();
-   }
+    //Если стиль не сменился - ничего не меняем
+    if(themePath === currentStylePath) {
+        return;
+    }
 
-   if (event.target.tagName === "BUTTON") {
-       const themePath = event.target.getAttribute("data-themePath") || defaultStylePath;
-       setSettings(THEME_KEY, themePath);
-       setTheme(themePath);
-   }
-
+    setSettings(THEME_KEY, themePath);
+    setTheme(themePath);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

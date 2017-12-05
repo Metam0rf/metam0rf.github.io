@@ -72,11 +72,6 @@ color: white;
     background-color: #40c4ff;
 }
 
-.btn:hover > input{
-    background-color: #40c4ff;
-}
-
-
 .movieCard{
     width: 400px;
     margin-bottom: 20px;
@@ -119,13 +114,4 @@ color: white;
 
 .styleBtn{
     padding: 3px;
-}
-
-input[type="color"]{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #01579b;
 }

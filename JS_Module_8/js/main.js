@@ -14,15 +14,23 @@ const categoryContainer = document.querySelector("#requestCategory");
 const htmlTpl = document.querySelector("#movie-card").textContent.trim();
 const compiled = _.template(htmlTpl);
 
+const formatFilmOverview = (film) => {
+    if (film.overview.length > 100) {
+       return `${film.overview.substring(0, 100)}...`;
+    } else {
+        return film.overview === "" ? "..." : film.overview;
+    }
+};
+
 const updateFilmsView = films => {
     let htmlString = "";
 
-    if(films.length !== 0) {
-        films.forEach((film, index) => {
-            if (index > FILMS_COUNT) return;
-            htmlString += compiled(film);
-        });
-    } else {
+    films.forEach((film, index) => {
+        if (index > FILMS_COUNT) return;
+        htmlString += compiled(film);
+    });
+
+    if (htmlString === "") {
         htmlString = "<h2>По вашему запросу ничего не найдено!</h2>";
     }
 
@@ -30,7 +38,10 @@ const updateFilmsView = films => {
 };
 
 const getRequestParams =(event) => {
-    if(event.target.id === "search" || searchByNameInput.value.trim() !== ""){
+    if(event.target.id === "search"){
+        if(searchByNameInput.value.trim() === ""){
+            return "";
+        }
         const searchText = searchByNameInput.value.trim();
         searchByNameInput.value = "";
         return `${SEARCH_REQUEST}${defaultLanguage}&query=${searchText.replace(/ /g, "+")}`;
@@ -41,7 +52,11 @@ const getRequestParams =(event) => {
 
 const submit = (event) => {
     event.preventDefault();
-    getFilmsData(getRequestParams(event))
+    const URL_REQUEST = getRequestParams(event);
+    if(URL_REQUEST === ""){
+        throw new Error("Error getting URL request!");
+    }
+    getFilmsData(URL_REQUEST)
         .then(data => {
             console.log(data);
             updateFilmsView(data);
@@ -65,8 +80,7 @@ const getFilmsData = (URL_REQUEST) => {
                 id: film.id,
                 posterPath: film.poster_path !== null ? `${POSTERS_URL}${film.poster_path}` : "",
                 title: film.title,
-                overview: film.overview.length > 100 ? `${film.overview.substring(0, 100)}...` :
-                    film.overview === "" ? "..." : film.overview,
+                overview: formatFilmOverview(film),
                 releaseDate: new Date(film.release_date).getFullYear(),
                 voteRating: film.vote_average,
             }));
@@ -75,7 +89,7 @@ const getFilmsData = (URL_REQUEST) => {
 
 movieFilterForm.addEventListener("submit", submit);
 categoryContainer.addEventListener("click", (e) => {
-    if(e.target.classList.contains("btn")){
+    if(e.target !== this){
         submit(e);
     }
 });

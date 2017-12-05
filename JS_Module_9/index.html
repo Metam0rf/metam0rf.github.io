@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/default-theme.css" id="themeCSS">
+    <title>Films API</title>
+</head>
+<body>
+<div class="wrapPage">
+    <form id="movieFilter">
+        <div>
+
+            <div>
+                <div class="style-settings">
+                    <fieldset>
+                        <legend>Выберите тему</legend>
+                        <button class="styleBtn btn" type="button" data-themePath="css/default-theme.css"> <input type="color" value="#40c4ff"> Default</button>
+                        <button class="styleBtn btn" type="button" data-themePath="css/light-theme.css"> <input type="color" value="#feffdf"> Light</button>
+                        <button class="styleBtn btn" type="button" data-themePath="css/dark-theme.css"> <input type="color" value="#000000"> Dark</button>
+                    </fieldset>
+                </div>
+                <div class="btnWrapper">
+                    <input type="text" id="searchText" placeholder="SEARCH FILMS BY NAME">
+                    <button class="btn" id="search" type="submit">поиск</button>
+                </div>
+                <div class="btnWrapper" id="requestCategory">
+                    <button class="btn" id="popular" type="button">Popular</button>
+                    <button class="btn" id="top_rated" type="button">TOP rates</button>
+                    <button class="btn" id="upcoming" type="button">Upcoming</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <main>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+<!-- Шаблон карточки фильма -->
+<script type="text/movieCard" id="movie-card">
+    <section class="movieCard" id="<%- id%>">
+        <img class="poster" src="<%- posterPath%>" alt="">
+        <h3><%- title%> </h3>
+        <p><%- overview%></p>
+        <footer class="cardFooter">Дата релиза: <%- releaseDate%></footer>
+        <span class="cardRate"><%- voteRating%></span>
+    </section>
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

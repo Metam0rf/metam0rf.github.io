@@ -1,0 +1,35 @@
+body{
+    background: #00b0ff ;
+    color: #000;
+}
+
+main{
+    color: black;
+}
+
+.btn{
+    border: solid black 1px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    background-color: #01579b;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #40c4ff;
+}
+
+.btn:hover > input{
+    background-color: #40c4ff;
+}
+
+.movieCard{
+    background-color: #40c4ff;
+}
+
+input[type="color"]{
+    background-color: #01579b;
+}
+
+input[type="color"]:hover{
+    background-color: #40c4ff;
+}

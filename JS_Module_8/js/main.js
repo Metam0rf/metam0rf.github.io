@@ -38,8 +38,9 @@ const updateFilmsView = films => {
 };
 
 const getRequestParams =(event) => {
-    if(event.target.id === "search"){
+    if(event.type === "submit"){
         if(searchByNameInput.value.trim() === ""){
+            alert("Введите условие поиска.");
             return "";
         }
         const searchText = searchByNameInput.value.trim();
@@ -54,7 +55,7 @@ const submit = (event) => {
     event.preventDefault();
     const URL_REQUEST = getRequestParams(event);
     if(URL_REQUEST === ""){
-        throw new Error("Error getting URL request!");
+        return;
     }
     getFilmsData(URL_REQUEST)
         .then(data => {
